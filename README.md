@@ -12,12 +12,12 @@ Do you know who serves your favorite bagel in Chicago? How about your favorite b
 
 Solutions:
 
- - [Part 1](https://github.com/dsgn425-s15/very_best_associations_solutions/commit/899f509fc4356f9cbfe9826d88897c647c32df19)
- - [Part 2](https://github.com/dsgn425-s15/very_best_associations_solutions/commit/c1ff06cb805d7bdda66685d642eab78137074b14)
- - [Part 3](https://github.com/dsgn425-s15/very_best_associations_solutions/commit/28c57b9b7f9de2466f88c691687e68662e8c40e6)
- - [Part 4](https://github.com/dsgn425-s15/very_best_associations_solutions/commit/c3285568eadf0057fa11dbcd2c779a8919db0072)
- - [Part 5](https://github.com/dsgn425-s15/very_best_associations_solutions/commit/ee2e2e4de23b50f981971ee4a270edec48489b85)
- - [Part 6](https://github.com/dsgn425-s15/very_best_associations_solutions/commit/f8616e171edc8c25e0b513d08eb2932ddbbb4152)
+ - [Part 1](../../../very_best_associations_solutions/commit/899f509fc4356f9cbfe9826d88897c647c32df19)
+ - [Part 2](../../../very_best_associations_solutions/commit/c1ff06cb805d7bdda66685d642eab78137074b14)
+ - [Part 3](../../../very_best_associations_solutions/commit/28c57b9b7f9de2466f88c691687e68662e8c40e6)
+ - [Part 4](../../../very_best_associations_solutions/commit/c3285568eadf0057fa11dbcd2c779a8919db0072)
+ - [Part 5](../../../very_best_associations_solutions/commit/ee2e2e4de23b50f981971ee4a270edec48489b85)
+ - [Part 6](../../../very_best_associations_solutions/commit/f8616e171edc8c25e0b513d08eb2932ddbbb4152)
 
 ## Domain Model
 
@@ -54,9 +54,13 @@ The supporting cast of models in the app are as follows:
 
 Every table also has it's own `id: integer` column, of course. Also, every table has automatically managed `created_at` and `updated_at` columns.
 
+In this domain model, a `Dish` is not the burger at Au Cheval -- a `Dish` is the category, "Burger". A `Favorite` is my opinion of the burger at Au Cheval, which is why it belongs to me (a `User`), "Burger" (a `Dish`), and Au Cheval (a `Venue`).
+
+`Cuisine` is simply a category that `Dish`es belong to, and `Neighborhood` is a category that `Venue`s belong to.
+
 **I have already generated the above tables using the starter_generators gem.** So, right now, the application technically *works*; we can CRUD users, cuisines, dishes, venues, neighborhoods, and favorites. But the interface is *horrible* -- just the standard boilerplate that the generator spits out.
 
-**Your job is going to be to improve the interface of this application using what you've learned about HTML, CSS, and associations.**
+**Your job is going to be to improve the interface of this application using what you've learned about Associations.**
 
 ## Setup
 
