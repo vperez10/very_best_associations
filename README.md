@@ -106,7 +106,7 @@ Other rules to include:
  - Dish name should be present and unique
  - Dish cuisine_id should be present
  - Venue name should be present
- - Venue cuisine_id should be present
+ - Venue neighborhood_id should be present
  - Neighborhood name should be present
  - Neighborhood name/city combination should be unique
 
