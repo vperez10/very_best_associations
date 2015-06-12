@@ -2,11 +2,11 @@ require 'rails_helper'
 
 describe Cuisine do
   describe "associations" do
-    it { should have_many(:dishes) }
+    it("does something", points: 5) { should have_many(:dishes) }
   end
 
   describe "validations" do
-    it { should validate_uniqueness_of(:name) }
-    it { should validate_presence_of(:name) }
+    it("does something", points: 5) { should validate_uniqueness_of(:name) }
+    it("does something", points: 5) { should validate_presence_of(:name) }
   end
 end
