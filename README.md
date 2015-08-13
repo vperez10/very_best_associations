@@ -209,7 +209,8 @@ Other views that require fixing:
 
 The real power of this app comes from being able to see collections of associated objects. As a user, I want to
 
- - see a list of venues located in a neighborhood on the neighborhoods#show page (print names)
+ - see a list of venues located in a neighborhood on the neighborhoods#show page (print venue names)
+ - see a list of dishes that belong to a cuisine on the cuisines#show page (print dish names)
  - see a list of favorites on the dishes#show page (print venue names and usernames)
  - see a list of favorites on the venues#show page (print dish names and usernames)
  - And, the most crucial part: **on the users#show view, display a list of the user's favorites (which dish and which venue).**
