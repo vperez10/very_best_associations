@@ -122,7 +122,7 @@ end
 
 puts "There are now #{Venue.count} venues in the database."
 
-usernames = ["abby", "alex", "mike", "raghu"]
+usernames = ["alice", "bob", "carol", "eve"]
 
 usernames.each do |username|
   user = User.new
@@ -133,38 +133,38 @@ end
 puts "There are now #{User.count} users in the database."
 
 favorite_hashes = [
-  { :user => "alex", :dish => "Michelada", :venue => "Big Star", :notes => "" },
-  { :user => "alex", :dish => "Gnocchi", :venue => "MAX's Wine Dive", :notes => "Braised short rib" },
-  { :user => "abby", :dish => "Fruit Bowl", :venue => "Kanela Breakfast Club", :notes => "" },
-  { :user => "alex", :dish => "Charcuterie", :venue => "The Publican", :notes => "" },
-  { :user => "alex", :dish => "Tres Leches", :venue => "Mott St", :notes => "" },
-  { :user => "abby", :dish => "Pot Pie", :venue => "Pleasant House Bakery", :notes => "Mushroom, kale" },
-  { :user => "abby", :dish => "Grits", :venue => "The Southern", :notes => "" },
-  { :user => "alex", :dish => "Ramen", :venue => "Slurping Turtle", :notes => "" },
-  { :user => "abby", :dish => "Banana Split", :venue => "Margie's Candies", :notes => "" },
-  { :user => "abby", :dish => "Veggie Burger", :venue => "Shake Shack", :notes => "" },
-  { :user => "alex", :dish => "Chili", :venue => "Skylark", :notes => "" },
-  { :user => "abby", :dish => "Old Fashioned", :venue => "The Whistler", :notes => "" },
-  { :user => "abby", :dish => "Fried Pickles", :venue => "Handlebar", :notes => "" },
-  { :user => "abby", :dish => "Bloody Mary", :venue => "Handlebar", :notes => "" },
-  { :user => "mike", :dish => "Burger", :venue => "Umami Burger", :notes => "" },
-  { :user => "alex", :dish => "Spaghetti", :venue => "Balena", :notes => "Sea urchin" },
-  { :user => "abby", :dish => "Watermelon Salad", :venue => "Unite Urban Grill", :notes => "" },
-  { :user => "alex", :dish => "Negroni", :venue => "Billy Sunday", :notes => "" },
-  { :user => "mike", :dish => "Lamb Chops", :venue => "Chicago Cut Steakhouse", :notes => "" },
-  { :user => "mike", :dish => "Creme Brulee", :venue => "Ruth's Chris Steak House", :notes => "" },
-  { :user => "mike", :dish => "Pancakes", :venue => "Little Goat", :notes => "Sourdough" },
-  { :user => "abby", :dish => "Gin and Tonic", :venue => "Longman & Eagle", :notes => "" },
-  { :user => "abby", :dish => "Mussels", :venue => "Lockdown Bar & Grill", :notes => "Coconut curry sauce" },
-  { :user => "alex", :dish => "Mussels", :venue => "Lockdown Bar & Grill", :notes => "Coconut curry sauce" },
-  { :user => "raghu", :dish => "Mussels", :venue => "Lockdown Bar & Grill", :notes => "Coconut curry sauce" },
-  { :user => "raghu", :dish => "Chicken Tikka Masala", :venue => "Rangoli", :notes => "" },
-  { :user => "raghu", :dish => "Michelada", :venue => "Big Star", :notes => "" },
-  { :user => "abby", :dish => "Michelada", :venue => "Big Star", :notes => "" },
-  { :user => "raghu", :dish => "Pot Pie", :venue => "Plein Air Cafe & Eatery", :notes => "" },
-  { :user => "raghu", :dish => "Old Fashioned", :venue => "Bavette's Bar & Boeuf", :notes => "" },
-  { :user => "raghu", :dish => "Burger", :venue => "Au Cheval", :notes => "Bacon, fried egg" },
-  { :user => "raghu", :dish => "Biscuits and Gravy", :venue => "Little Goat", :notes => "" }
+  { :user => "bob", :dish => "Michelada", :venue => "Big Star", :notes => "" },
+  { :user => "bob", :dish => "Gnocchi", :venue => "MAX's Wine Dive", :notes => "Braised short rib" },
+  { :user => "alice", :dish => "Fruit Bowl", :venue => "Kanela Breakfast Club", :notes => "" },
+  { :user => "bob", :dish => "Charcuterie", :venue => "The Publican", :notes => "" },
+  { :user => "bob", :dish => "Tres Leches", :venue => "Mott St", :notes => "" },
+  { :user => "alice", :dish => "Pot Pie", :venue => "Pleasant House Bakery", :notes => "Mushroom, kale" },
+  { :user => "alice", :dish => "Grits", :venue => "The Southern", :notes => "" },
+  { :user => "bob", :dish => "Ramen", :venue => "Slurping Turtle", :notes => "" },
+  { :user => "alice", :dish => "Banana Split", :venue => "Margie's Candies", :notes => "" },
+  { :user => "alice", :dish => "Veggie Burger", :venue => "Shake Shack", :notes => "" },
+  { :user => "bob", :dish => "Chili", :venue => "Skylark", :notes => "" },
+  { :user => "alice", :dish => "Old Fashioned", :venue => "The Whistler", :notes => "" },
+  { :user => "alice", :dish => "Fried Pickles", :venue => "Handlebar", :notes => "" },
+  { :user => "alice", :dish => "Bloody Mary", :venue => "Handlebar", :notes => "" },
+  { :user => "carol", :dish => "Burger", :venue => "Umami Burger", :notes => "" },
+  { :user => "bob", :dish => "Spaghetti", :venue => "Balena", :notes => "Sea urchin" },
+  { :user => "alice", :dish => "Watermelon Salad", :venue => "Unite Urban Grill", :notes => "" },
+  { :user => "bob", :dish => "Negroni", :venue => "Billy Sunday", :notes => "" },
+  { :user => "carol", :dish => "Lamb Chops", :venue => "Chicago Cut Steakhouse", :notes => "" },
+  { :user => "carol", :dish => "Creme Brulee", :venue => "Ruth's Chris Steak House", :notes => "" },
+  { :user => "carol", :dish => "Pancakes", :venue => "Little Goat", :notes => "Sourdough" },
+  { :user => "alice", :dish => "Gin and Tonic", :venue => "Longman & Eagle", :notes => "" },
+  { :user => "alice", :dish => "Mussels", :venue => "Lockdown Bar & Grill", :notes => "Coconut curry sauce" },
+  { :user => "bob", :dish => "Mussels", :venue => "Lockdown Bar & Grill", :notes => "Coconut curry sauce" },
+  { :user => "eve", :dish => "Mussels", :venue => "Lockdown Bar & Grill", :notes => "Coconut curry sauce" },
+  { :user => "eve", :dish => "Chicken Tikka Masala", :venue => "Rangoli", :notes => "" },
+  { :user => "eve", :dish => "Michelada", :venue => "Big Star", :notes => "" },
+  { :user => "alice", :dish => "Michelada", :venue => "Big Star", :notes => "" },
+  { :user => "eve", :dish => "Pot Pie", :venue => "Plein Air Cafe & Eatery", :notes => "" },
+  { :user => "eve", :dish => "Old Fashioned", :venue => "Bavette's Bar & Boeuf", :notes => "" },
+  { :user => "eve", :dish => "Burger", :venue => "Au Cheval", :notes => "Bacon, fried egg" },
+  { :user => "eve", :dish => "Biscuits and Gravy", :venue => "Little Goat", :notes => "" }
 ]
 
 favorite_hashes.each do |favorite_hash|
@@ -174,7 +174,6 @@ favorite_hashes.each do |favorite_hash|
   favorite = Favorite.new
   favorite.user_id = user.id
   favorite.dish_id = dish.id
-  puts favorite_hash[:venue]
   favorite.venue_id = venue.id
   favorite.notes = favorite_hash[:notes]
   favorite.save

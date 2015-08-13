@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Do you know who serves your favorite bagel in Chicago? How about your favorite burger? This application will allow you to keep track.
+Do you remember who serves your favorite bagel in Chicago? How about your favorite burger? This application will allow you to keep track.
 
 ### Note:
 
@@ -10,18 +10,23 @@ Do you know who serves your favorite bagel in Chicago? How about your favorite b
 
 [Here is your target.](https://verybest-associations-target.herokuapp.com/)
 
-Solutions:
-
- - [Part 1](../../../very_best_associations_solutions/commit/899f509fc4356f9cbfe9826d88897c647c32df19)
- - [Part 2](../../../very_best_associations_solutions/commit/c1ff06cb805d7bdda66685d642eab78137074b14)
- - [Part 3](../../../very_best_associations_solutions/commit/28c57b9b7f9de2466f88c691687e68662e8c40e6)
- - [Part 4](../../../very_best_associations_solutions/commit/c3285568eadf0057fa11dbcd2c779a8919db0072)
- - [Part 5](../../../very_best_associations_solutions/commit/ee2e2e4de23b50f981971ee4a270edec48489b85)
- - [Part 6](../../../very_best_associations_solutions/commit/f8616e171edc8c25e0b513d08eb2932ddbbb4152)
-
 ## Domain Model
 
-The central resource in this application is **Favorites**. A favorite belongs to a user and specifies a particular restaurant and a particular dish. For example, my favorite burger in Chicago is served at Au Cheval. Yours might be at Umami Burger. So the favorites table looks like this:
+At a minimum, it seems like we'll need CRUD resources for users, dishes, and venues.
+
+**Note:** In this model, a `Dish` is not the specific burger at Au Cheval -- a `Dish` is the general category, "Burger".
+
+What are the relationships between these models?
+
+ - Can a user be associated to many venues? Yes
+ - Can a venue be associated to many users? Yes
+ - Thus, it's a many-to-many and we need a join model.
+
+What is a good name for the join model between users and venues? Perhaps Review? Or Favorite? Let's go with Favorite.
+
+So, at a minimum, the favorites table will need two foreign keys: `user_id` and `venue_id`. Are there any other useful things to record about each favorite? Well, yes; crucially, which dish it was that I liked at that particular venue.
+
+Thus the central resource in this application is **Favorites**. A favorite belongs to a user and specifies a particular restaurant and a particular dish. For example, my favorite burger in Chicago is served at Au Cheval. Yours might be at Umami Burger. So the favorites table looks like this:
 
     Favorite:
       user_id: integer
@@ -31,7 +36,9 @@ The central resource in this application is **Favorites**. A favorite belongs to
 
 The notes column exists so that users can remember additional info on a dish if they choose to, e.g., what extras to add.
 
-The supporting cast of models in the app are as follows:
+Essentially, a Favorite joins a User, a Dish, and a Venue.
+
+And, the supporting cast of models in the app are as follows:
 
     User:
       username: string
@@ -53,8 +60,6 @@ The supporting cast of models in the app are as follows:
       city: string
 
 Every table also has it's own `id: integer` column, of course. Also, every table has automatically managed `created_at` and `updated_at` columns.
-
-In this domain model, a `Dish` is not the burger at Au Cheval -- a `Dish` is the category, "Burger". A `Favorite` is my opinion of the burger at Au Cheval, which is why it belongs to me (a `User`), "Burger" (a `Dish`), and Au Cheval (a `Venue`).
 
 `Cuisine` is simply a category that `Dish`es belong to, and `Neighborhood` is a category that `Venue`s belong to.
 
@@ -200,23 +205,26 @@ Other views that require fixing:
  - favorites#show (displays `user_id`, `dish_id`, and `neighborhood_id`)
  - favorites#index (displays `user_id`, `dish_id`, and `neighborhood_id`)
 
-## Part 5: Achieve User Stories
+## Part 5: Display Associated Collections
 
 The real power of this app comes from being able to see collections of associated objects. As a user, I want to
 
  - see a list of venues located in a neighborhood on the neighborhoods#show page (print names)
  - see a list of favorites on the dishes#show page (print venue names and usernames)
  - see a list of favorites on the venues#show page (print dish names and usernames)
+ - And, the most crucial part: **on the users#show view, display a list of the user's favorites (which dish and which venue).**
 
-And, the most crucial part: **on the users#show view, display a list of the user's favorites (which dish and which venue).**
-
-You'll have to retrieve some rows from the Favorites table (the ones that belong to the user whose show page you are on). Because of the work we did in Part 2, this is as easy as
+Because of the work we did in Part 2, retrieving associated collections is as easy as
 
     @user.favorites
 
 Loop through them in the view and display the associated venue's name and dish's name. You can decide what markup to use to make it look nice.
 
-## Part 6 (optional)
+## Part 6: Quick Add Forms
+
+At the bottom of each associated collection, add a form to quickly add a new record to that collection. You'll want to use an `<input type="hidden" value="">` and pre-populate it with the correct foreign key.
+
+## Part 7: has_many/through
 
 On the show page for a neighborhood, display all of the favorites that are in that neighborhood. You can use the `:through` option to achieve this easily:
 
@@ -231,9 +239,11 @@ Now, in the view (or anywhere else you have a Neighborhood object), you can do
 
     @neighborhood.favorites
 
-## Part 7 (nothing to submit)
+And then loop through to display them exactly as you did on users#show.
 
-Now that you've gotten some hands on experience with models, it's time to nail down your domain model for your app idea. With that in hand, you'll be able to rapidly prototype it next week.
+## Part 8 (nothing to submit)
+
+Now that you've gotten some hands-on experience with associations, it's time to nail down your domain model for your app idea. With that in hand, you'll be able to rapidly prototype it next week.
 
 What are the CRUD resources you need in your app? In other words, what are the central *things* you need to keep track of information about?
 
