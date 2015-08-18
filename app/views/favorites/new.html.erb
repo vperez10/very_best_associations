@@ -1,11 +1,11 @@
 <!-- Validation failure messages -->
 <% if @favorite.errors.any? %>
-  <% @favorite.errors.full_messages.each do |message| %>
-    <div class="alert alert-dismissable alert-danger">
-      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-      <%= message %>
-    </div>
-  <% end %>
+<% @favorite.errors.full_messages.each do |message| %>
+<div class="alert alert-dismissable alert-danger">
+  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+  <%= message %>
+</div>
+<% end %>
 <% end %>
 
 <div class="page-header">
@@ -23,7 +23,7 @@
         <label for="user_id" class="control-label">
           User
         </label>
-        <input type="text" id="user_id" name="user_id" placeholder="User" class="form-control" value="<%= @favorite.user_id %>">
+        <%= select_tag(:user_id, options_from_collection_for_select(User.all, :id, :username, @favorite.user_id), :class => "form-control")%>
       </div>
 
       <!-- Label and input for dish_id -->
@@ -31,7 +31,7 @@
         <label for="dish_id" class="control-label">
           Dish
         </label>
-        <input type="text" id="dish_id" name="dish_id" placeholder="Dish" class="form-control" value="<%= @favorite.dish_id %>">
+        <%= select_tag(:dish_id, options_from_collection_for_select(Dish.all, :id, :name, @favorite.dish_id), :class => "form-control")%>
       </div>
 
       <!-- Label and input for venue_id -->
@@ -39,7 +39,7 @@
         <label for="venue_id" class="control-label">
           Venue
         </label>
-        <input type="text" id="venue_id" name="venue_id" placeholder="Venue" class="form-control" value="<%= @favorite.venue_id %>">
+        <%= select_tag(:venue_id, options_from_collection_for_select(Venue.all, :id, :name, @favorite.venue_id), :class => "form-control")%>
       </div>
 
       <!-- Label and input for notes -->
