@@ -14,7 +14,7 @@
       <dt>Venues</dt>
       <dd>
         <ul class="list-group">
-          <%= Venues.where(:neighborhood_id => @venue.neighborhood_id).each do |x|%>
+          <%= Venue.where(:neighborhood_id => @venue.neighborhood_id).each do |x|%>
           <li class="list-group-item">
             <%= x.name %>
           </li>
